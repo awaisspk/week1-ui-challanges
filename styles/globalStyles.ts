@@ -4,9 +4,9 @@ export const globalStyles = globalCss({
   html: {
     font: '100%/1.25 $fonts$primary',
 
-    '@bp2': {
-      font: '112.5%/1.45 $fonts$primary',
-    },
+    // '@bp2': {
+    //   font: '112.5%/1.45 $fonts$primary',
+    // },
     boxSizing: 'border-box',
   },
 
@@ -20,6 +20,7 @@ export const globalStyles = globalCss({
   a: {
     textDecoration: 'none',
   },
+
   img: {
     maxWidth: '100%',
   },

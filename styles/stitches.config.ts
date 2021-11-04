@@ -151,7 +151,7 @@ const StitchesConfig = createStitches({
     bp3: '(min-width: 48em)',
     bp4: '(min-width: 62em)',
     bp5: '(min-width: 80em)',
-    bp6: '(min-width: 95em)',
+    bp6: '(min-width: 90em)',
   },
   prefix: 'ecom',
   utils: {
@@ -219,14 +219,30 @@ const StitchesConfig = createStitches({
     ml: (value: Stitches.PropertyValue<'marginLeft'>) => ({
       marginLeft: value,
     }),
-    linearGradient: (value: Stitches.PropertyValue<'backgroundImage'>) => ({
-      backgroundImage: `linear-gradient(${value})`,
+
+    linearGradient: ([startColor, endColor]: [string, string]) => ({
+      backgroundImage: `linear-gradient(${startColor},${endColor})`,
     }),
     minH: (value: Stitches.PropertyValue<'minHeight'>) => ({
       minHeight: value,
     }),
     maxH: (value: Stitches.PropertyValue<'maxHeight'>) => ({
       maxHeight: value,
+    }),
+
+    fuildFontSize: ([minVw, maxVw, minFs, maxFs]: [
+      number,
+      number,
+      number,
+      number
+    ]) => ({
+      fontSize: `${minFs}rem`,
+      '@bp1': {
+        fontSize: `calc(${minFs}rem + (((100vw - ${minVw}rem) / (${maxVw} - ${minVw}))) * (${maxFs} - ${minFs}))`,
+      },
+      '@bp4': {
+        fontSize: `${maxFs}rem`,
+      },
     }),
   },
 });

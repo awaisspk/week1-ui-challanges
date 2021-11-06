@@ -3,16 +3,15 @@ import type {NextPage} from 'next';
 import {Day1} from 'Week/day1';
 import {Day2} from 'Week/day2';
 import {Cards} from 'Week/day2/data';
-import {Day3} from 'Week/day3';
-import {MySolution} from 'Week/day3/mySolution';
+import {BouncingBar, ThemeToggle} from 'Week/day3';
 
 const Home: NextPage = () => {
   return (
-    <Container main="center" cross="center">
-      {/* <Day1 /> */}
-      {/* <Day2 cards={Cards} /> */}
-      <Day3 />
-      <MySolution />
+    <Container flow="col" main="center" cross="center" css={{minWidth: '100%'}}>
+      {/* <Day1 />
+      <Day2 cards={Cards} /> */}
+      <ThemeToggle />
+      {/* <BouncingBar /> */}
     </Container>
   );
 };

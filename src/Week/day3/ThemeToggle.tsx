@@ -1,10 +1,11 @@
 import {Container} from '@components/Container';
+import {Flex} from '@components/Flex';
 import {styled} from '@stitches/react';
 import {motion, AnimatePresence, Variants} from 'framer-motion';
 import {useState} from 'react';
 import {FaMoon, FaSun} from 'react-icons/fa';
 
-export const MySolution = () => {
+export const ThemeToggle = () => {
   const [isOn, setIsOn] = useState(false);
 
   const bgVariant: Variants = {
@@ -19,33 +20,40 @@ export const MySolution = () => {
   };
 
   return (
-    <Container
-      main="center"
-      cross="center"
-      css={{transition: '300ms', backgroundColor: isOn ? '#52527a' : 'white'}}
-    >
-      <Pill
-        onClick={() => setIsOn(!isOn)}
-        css={{justifyContent: isOn ? 'flex-end' : 'flex-start'}}
-        variants={bgVariant}
-        animate={isOn ? 'on' : 'off'}
-        darkMode={isOn}
+    <Container flow="col" main="center" cross="center">
+      <Flex
+        center
+        css={{
+          transition: '300ms',
+          backgroundColor: isOn ? '#52527a' : 'white',
+          width: '300px',
+          height: '300px',
+          br: '40px',
+        }}
       >
-        <Handle layout transition={{damping: 0}}>
-          <AnimatePresence exitBeforeEnter initial={false}>
-            <motion.i
-              className="icon"
-              key={isOn ? 'moon' : 'sun'}
-              initial={{y: -30, opacity: 0}}
-              animate={{y: 0, opacity: 1}}
-              exit={{y: 30, opacity: 0}}
-              transition={{duration: 0.2}}
-            >
-              {isOn ? <FaMoon /> : <FaSun />}
-            </motion.i>
-          </AnimatePresence>
-        </Handle>
-      </Pill>
+        <Pill
+          onClick={() => setIsOn(!isOn)}
+          css={{justifyContent: isOn ? 'flex-end' : 'flex-start'}}
+          variants={bgVariant}
+          animate={isOn ? 'on' : 'off'}
+          darkMode={isOn}
+        >
+          <Handle layout transition={{damping: 0}}>
+            <AnimatePresence exitBeforeEnter initial={false}>
+              <motion.i
+                className="icon"
+                key={isOn ? 'moon' : 'sun'}
+                initial={{y: -30, opacity: 0}}
+                animate={{y: 0, opacity: 1}}
+                exit={{y: 30, opacity: 0}}
+                transition={{duration: 0.2}}
+              >
+                {isOn ? <FaMoon /> : <FaSun />}
+              </motion.i>
+            </AnimatePresence>
+          </Handle>
+        </Pill>
+      </Flex>
     </Container>
   );
 };

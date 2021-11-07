@@ -1,6 +1,7 @@
 import {styled} from '@stitchesConfig';
 import {motion, Variants} from 'framer-motion';
 import React from 'react';
+import {RiGithubLine} from 'react-icons/ri';
 
 const StyledButton = styled(motion.button, {
   border: 'none',
@@ -42,7 +43,7 @@ const StyledButton = styled(motion.button, {
 });
 
 type ButtonProps = {
-  icon?: 'arrow' | 'email';
+  icon?: 'arrow' | 'email' | 'github';
 };
 
 type StyledButtonProps = React.ComponentProps<typeof StyledButton>;
@@ -59,7 +60,7 @@ export const Button: React.FC<Props> = ({icon, children, ...rest}) => {
       scale: 1.05,
     },
     tap: {
-      scale: 0.95,
+      scale: 0.98,
     },
   };
 
@@ -73,6 +74,7 @@ export const Button: React.FC<Props> = ({icon, children, ...rest}) => {
         whileTap="tap"
         {...rest}
       >
+        {icon === 'github' && <RiGithubLine />}
         {children}
       </StyledButton>
     </>

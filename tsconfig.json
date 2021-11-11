@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
       "@stitchesConfig": [
-        "../styles/stitches.config.ts"
+        "styles/stitches.config"
       ],
       "@components/*": [
-        "components/*"
+        "src/components/*"
       ],
-      "@week/*": [
-        "week/*"
+      "Week/*": [
+        "src/Week/*"
       ]
     },
     "target": "es5",

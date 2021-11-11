@@ -7,6 +7,7 @@ const StitchesConfig = createStitches({
     fonts: {
       primary: 'Inter',
     },
+
     fontSizes: {
       0: '0.75rem',
       1: '0.875rem',
@@ -228,6 +229,16 @@ const StitchesConfig = createStitches({
     }),
     maxH: (value: Stitches.PropertyValue<'maxHeight'>) => ({
       maxHeight: value,
+    }),
+
+    appearance: (value: Stitches.PropertyValue<'appearance'>) => ({
+      appearance: value,
+      MozAppearance: value,
+      WebkitAppearance: value,
+    }),
+    box: (value: Stitches.PropertyValue<'width'>) => ({
+      width: value,
+      height: value,
     }),
 
     fuildFontSize: ([minVw, maxVw, minFs, maxFs]: [

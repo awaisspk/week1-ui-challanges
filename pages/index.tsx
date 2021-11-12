@@ -7,6 +7,7 @@ import {BouncingBar, ThemeToggle} from 'Week/day3';
 import {Day4} from 'Week/day4';
 import {Day5} from 'Week/day5';
 import {Day6} from 'Week/day6';
+import {Day7} from 'Week/day7';
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +17,8 @@ const Home: NextPage = () => {
       {/* <ThemeToggle /> */}
       {/* <BouncingBar /> */}
       {/* <Day4 /> */}
-      <Day6 />
+      {/* <Day6 /> */}
+      <Day7 />
     </Container>
   );
 };

@@ -3,9 +3,9 @@ import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import {styled} from '@stitchesConfig';
 import {CgCheck} from 'react-icons/cg';
 
-export const CheckBox = () => {
+export const Project2 = () => {
   return (
-    <Flex gap="4" main="center">
+    <Flex gap="4" center>
       <StyledCheckbox id="c1">
         <CheckboxIndicator>
           <CgCheck />
@@ -16,9 +16,10 @@ export const CheckBox = () => {
   );
 };
 
-const StyledCheckbox = styled(CheckboxPrimitive.Root, {
-  all: 'unset',
-});
+const StyledCheckbox = styled(CheckboxPrimitive.Root, {});
 
 const CheckboxIndicator = styled(CheckboxPrimitive.Indicator, {});
-const Label = styled('label', {});
+
+const Label = styled('label', {
+  width: '$3',
+});
